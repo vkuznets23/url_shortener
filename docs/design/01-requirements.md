@@ -4,8 +4,6 @@ This document describes the functional and non-functional requirements of the UR
 
 ## Actors
 
-The system has the following actor:
-
 - **User** — a person who can register, authenticate, create, and manage shortened URLs.
 
 ## Assumptions
