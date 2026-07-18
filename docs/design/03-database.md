@@ -57,3 +57,7 @@ Table clicks {
 Ref: links.user_id > users.id
 Ref: clicks.url_id > links.id
 ```
+
+The initial schema is defined in:
+
+- `V1__init.sql`
