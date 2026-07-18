@@ -1,4 +1,5 @@
 # url_shortener
+
 The database is designed to support URL shortening, user management, and click analytics while keeping it simple and easy to extend with additional features in the future.
 
 The project consists of three main entities:
