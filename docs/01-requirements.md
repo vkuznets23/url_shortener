@@ -1,27 +1,63 @@
 # Requirements
 
+This document describes the functional and non-functional requirements of the URL Shortener application. It defines the expected system behavior, supported use cases, and key quality attributes that guide the implementation.
+
+## Actors
+
+The system has the following actor:
+
+- **User** — a person who can register, authenticate, create, and manage shortened URLs.
+
+## Assumptions
+
+- Only authenticated users can create and manage shortened URLs.
+- Redirecting via a short URL is available without authentication.
+- Expired URLs cannot be accessed.
+- Each short code uniquely identifies a single active URL.
+
+## Use Cases
+
+### User Authentication
+
+- Register a new account.
+- Log into the application.
+
+### URL Management
+
+- Create a shortened URL.
+- Specify an optional expiration date.
+- View all previously created URLs.
+- Delete a URL.
+
+### URL Redirection
+
+- Be redirected to the original URL.
+
+### Analytics
+
+- View click statistics for a shortened URL.
+
 ## Functional Requirements
 
-The application should allow users to:
+The system shall:
 
-- Register and log into the system.
-- Create shortened URLs from long URLs.
-- Specify an optional expiration date for a shortened URL.
-- Retrieve all URLs they have created.
-- Delete their own URLs.
-- Redirect visitors from a short URL to the original URL.
-- Record every redirect for analytics purposes.
-- View click statistics for their URLs.
+- Allow users to register and log into the application.
+- Generate a unique short code for each newly created URL.
+- Redirect requests for valid short URLs to the original destination.
+- Allow users to specify an optional expiration date.
+- Record every successful redirect for analytics.
+- Allow users to retrieve and delete only their own URLs.
+- Return the existing active short URL if the same user attempts to shorten the same URL with the same settings.
 
 ## Non-Functional Requirements
 
 The application should:
 
 - Store URL mappings and user data in a persistent database.
-- Generate unique short codes.
-- Securely store user passwords using hashing.
-- Handle multiple concurrent requests.
-- Use Redis to cache frequently accessed URL mappings.
+- Store user passwords as securely hashed values.
+- Support concurrent client requests without data corruption.
+- Frequently accessed URL mappings should be cached to improve redirect performance.
+- Expose a RESTful API.
 - Validate incoming requests.
-- Provide automated tests for the core business logic.
 - Be containerized using Docker.
+- Provide automated tests for the core business logic.

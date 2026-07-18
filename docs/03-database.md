@@ -1,14 +1,31 @@
-# url_shortener
+# Database design
 
-The database is designed to support URL shortening, user management, and click analytics while keeping it simple and easy to extend with additional features in the future.
+This database schema is designed to support URL shortening, user management, and click analytics while remaining simple and extensible for future features.
 
-The project consists of three main entities:
+## Entities
 
 - **Users** – stores user accounts and authentication information.
 - **Links** – stores mappings between long URLs and generated short codes.
 - **Clicks** – stores click events for analytics, such as the time of the click and the visitor's country.
 
-> **Business rule:** If a user attempts to shorten the same URL with the same settings, the existing active short link should be returned instead of creating a new one. Otherwise, a new short link is created.
+## Relationships
+
+- One **User** can create many **Links**.
+- One **Link** can have many **Click** records.
+
+## Business rule
+
+If a user attempts to shorten the same URL with the same settings, the existing active short link should be returned instead of creating a new one. Otherwise, a new short link is created.
+
+## Constraints
+
+- `username` must be unique.
+- `short_code` must be unique.
+- Every `Link` belongs to exactly one `User`.
+- Every `Click` belongs to exactly one `Link`.
+- `expires_at` may be null, indicating that the link never expires.
+
+## Database Schema
 
 <img width="978" height="320" alt="image" src="https://github.com/user-attachments/assets/566133d7-7479-4e1f-8f91-84330d640ca7" />
 
