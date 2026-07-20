@@ -14,28 +14,20 @@ This document describes the functional and non-functional requirements of the UR
 - Each short code uniquely identifies a single active URL.
 
 ## Use Cases
+
 <img width="1084" height="467" alt="image" src="https://github.com/user-attachments/assets/59a6ecbc-ffd5-46e5-a684-d79f7a9c00fe" />
 
-
-### User Authentication
-
-- Register a new account.
-- Log into the application.
-
-### URL Management
-
-- Create a shortened URL.
-- Specify an optional expiration date.
-- View all previously created URLs.
-- Delete a URL.
-
-### URL Redirection
-
-- Be redirected to the original URL.
-
-### Analytics
-
-- View click statistics for a shortened URL.
+| Category                | Use Case                         |
+| ----------------------- | -------------------------------- |
+| **User Authentication** | Register a new account           |
+|                         | Log into the application         |
+| **URL Management**      | Create a shortened URL           |
+|                         | Specify an expiration date       |
+|                         | View all previously created URLs |
+|                         | Update a URL                     |
+|                         | Delete a URL                     |
+| **URL Redirection**     | Redirect to the original URL     |
+| **Analytics**           | View click statistics            |
 
 ## Functional Requirements
 
