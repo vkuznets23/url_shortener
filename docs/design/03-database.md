@@ -38,26 +38,32 @@ Table users {
 }
 
 Table links {
-  id integer [primary key]
-  user_id integer [not null]
-  long_link varchar [not null]
-  short_code varchar [unique, not null]
-  created_at timestamp [not null]
-  // so user can set (7 days, 10 days, never, etc.)
-  expires_at timestamp
+id integer [primary key]
+user_id integer [not null]
+title varchar
+long_link varchar [not null]
+short_code varchar [unique, not null]
+created_at timestamp [not null]
+// so user can set (7 days, 10 days, never, etc.)
+expires_at timestamp
 }
 
 Table clicks {
-  id integer [primary key]
-  url_id integer [not null]
-  clicked_at timestamp [not null]
-  country_code varchar [not null]
+id integer [primary key]
+url_id integer [not null]
+clicked_at timestamp [not null]
+country_code varchar [not null]
 }
 
 Ref: links.user_id > users.id
 Ref: clicks.url_id > links.id
+
 ```
 
 The initial schema is defined in:
 
 - `V1__init.sql`
+
+```
+
+```
