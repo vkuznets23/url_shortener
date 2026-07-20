@@ -27,7 +27,8 @@ If a user attempts to shorten the same URL with the same settings, the existing 
 
 ## Database Schema
 
-<img width="978" height="320" alt="image" src="https://github.com/user-attachments/assets/566133d7-7479-4e1f-8f91-84330d640ca7" />
+<img width="900" height="295" alt="Screenshot 2026-07-20 at 19 42 34" src="https://github.com/user-attachments/assets/a7ac5571-19d5-45b9-b34e-53cbe1e5d654" />
+
 
 ```sql
 Table users {
